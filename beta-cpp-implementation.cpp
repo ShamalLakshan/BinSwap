@@ -20,12 +20,29 @@ std::string strToBinary(std::string s){
         }
         reverse(bin.begin(), bin.end());
 
-        output += bin + " ";
+        output += bin;
     }
     return output;
 }
 
+
+std::string reverseString(std::string input_string){
+    reverse(input_string.begin(), input_string.end());
+
+    return input_string;
+}
+
+
 int main(){
-    std::string myString = "SUPERSECRETPASSWORD";
-    std::cout << strToBinary(myString);
+    std::string myString;
+    std::cout << "Enter a String to Encode: \n";
+    std::getline(std::cin >> std::ws,  myString);
+    
+    std::cout << "Original String: " << myString << std::endl;
+
+    std::string binary_string = strToBinary(myString);
+    std::cout << "Binary String: " << binary_string << std::endl;
+    
+    std::string reversed_binary_string = reverseString(binary_string);
+    std::cout << "Reversed Binary String: " << reversed_binary_string << std::endl;
 }
