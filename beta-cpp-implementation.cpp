@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 #include <iostream>
 
+
 std::string strToBinary(std::string s){
     int n = s.length();
     std::string output = "";
@@ -32,9 +33,26 @@ std::string reverseString(std::string input_string){
     return input_string;
 }
 
+
 std::string keyExpansion(std::string original_key, int original_input_length){
     std::string binary_key = strToBinary(original_key);
     return binary_key;
+}
+
+
+std::string simpleXor(std::string user_input, std::string key){
+    std::string output;
+    int length = user_input.length();
+
+    for(int i = 0; i < length; i++){
+        if(user_input[i] == "0" && key[i] == "0"){
+            output += "0";
+        }
+        else{
+            output += "1";
+        }
+    }
+    return output;
 }
 
 
@@ -55,10 +73,20 @@ int main(){
     std::string reversed_binary_string = reverseString(binary_string);
     std::cout << "Reversed Binary String: " << reversed_binary_string << std::endl;
 
-    std::cout << "Enter a Key to Encode: \n";
+    std::cout << "Enter a Key to Encode: ";
     std::getline(std::cin >> std::ws,  myKey);
 
-    std::string expanded_key = keyExpansion(myKey, user_input_length);
-    std::cout << "Expanded Key (Bin): " << expanded_key << std::endl;
+    // std::string expanded_key = keyExpansion(myKey, user_input_length);
+    // std::cout << "Expanded Key (Bin): " << expanded_key << std::endl;
 
+    std::string binary_key = strToBinary(myKey);
+    std::cout << "Binary key: " << binary_key << std::endl;
+
+
+    std::string xored = simpleXor(binary_string, binary_key);
+    std::cout << "Xored String: " << xored << std::endl;
+
+    
+    std::string back_xored = simpleXor(binary_key, xored);
+    std::cout << "Back Xor key and out: " << back_xored << std::endl;
 }
