@@ -45,7 +45,7 @@ std::string simpleXor(std::string user_input, std::string key){
     int length = user_input.length();
 
     for(int i = 0; i < length; i++){
-        if(user_input[i] == "0" && key[i] == "0"){
+        if(user_input[i] == '0' && key[i] == '0'){
             output += "0";
         }
         else{
