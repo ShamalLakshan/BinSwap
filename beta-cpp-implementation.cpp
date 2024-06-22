@@ -21,7 +21,7 @@ std::string strToBinary(std::string s){
         }
         reverse(bin.begin(), bin.end());
 
-        output += bin + " ";
+        output += bin;
     }
     return output;
 }
@@ -41,18 +41,20 @@ std::string keyExpansion(std::string original_key, int original_input_length){
 
 
 std::string simpleXor(std::string user_input, std::string key){
-    std::string output;
-    int length = user_input.length();
+    std::string ans = "";
+    int n = user_input.length();
 
-    for(int i = 0; i < length; i++){
-        if(user_input[i] == '0' && key[i] == '0'){
-            output += "0";
-        }
-        else{
-            output += "1";
-        }
+    // Loop to iterate over the
+    // Binary Strings
+    for (int i = 0; i < n; i++)
+    {
+        // If the Character matches
+        if (user_input[i] == key[i])
+            ans += "0";
+        else
+            ans += "1";
     }
-    return output;
+    return ans;
 }
 
 
