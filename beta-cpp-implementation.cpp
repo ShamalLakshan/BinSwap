@@ -36,6 +36,9 @@ std::string reverseString(std::string input_string){
 
 std::string keyExpansion(std::string original_key, int original_input_length){
     std::string binary_key = strToBinary(original_key);
+
+
+
     return binary_key;
 }
 
@@ -91,4 +94,8 @@ int main(){
     
     std::string back_xored = simpleXor(binary_key, xored);
     std::cout << "Back Xor key and out: " << back_xored << std::endl;
+
+    int multiplier = (binary_string.length() / binary_key.length());
+    std::cout << "Multiplier: " << multiplier;
+
 }
