@@ -69,6 +69,8 @@ int main(){
     std::getline(std::cin >> std::ws,  myString);
 
     int user_input_length = myString.length();
+
+    std::cout << "#########################################################################" << std::endl;
     
     std::cout << "Original String: " << myString << std::endl;
 
@@ -78,8 +80,12 @@ int main(){
     std::string reversed_binary_string = reverseString(binary_string);
     std::cout << "Reversed Binary String: " << reversed_binary_string << std::endl;
 
+    std::cout << "#########################################################################" << std::endl;
+
     std::cout << "Enter a Key to Encode: ";
     std::getline(std::cin >> std::ws,  myKey);
+
+    std::cout << "#########################################################################" << std::endl;
 
     // std::string expanded_key = keyExpansion(myKey, user_input_length);
     // std::cout << "Expanded Key (Bin): " << expanded_key << std::endl;
@@ -95,7 +101,9 @@ int main(){
     std::string back_xored = simpleXor(binary_key, xored);
     std::cout << "Back Xor key and out: " << back_xored << std::endl;
 
+    std::cout << "#########################################################################" << std::endl;
+
     int multiplier = (binary_string.length() / binary_key.length());
-    std::cout << "Multiplier: " << multiplier;
+    std::cout << "Multiplier: " << multiplier << std::endl; 
 
 }
