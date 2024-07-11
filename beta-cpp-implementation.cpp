@@ -21,7 +21,7 @@ std::string strToBinary(std::string s){
         }
         reverse(bin.begin(), bin.end());
 
-        output += bin;
+        output += bin + " ";
     }
     return output;
 }
