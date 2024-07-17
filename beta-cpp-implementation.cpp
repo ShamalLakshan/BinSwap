@@ -53,14 +53,13 @@ std::vector<std::string> simpleXor(std::vector <std::string> user_input, std::ve
     std::vector<std::string> xored_string;
     int n = user_input.size();
 
-    // Loop to iterate over the
-    // Binary Strings
     for(int i = 0; i < n; i++){
         std::string octet = "";
-        std::string single_octet = user_input[i];
-        for(char bit : single_octet){
+        std::string single_octet_input = user_input[i];
+        std::string single_octet_key = key[i];
+        for(char bit : single_octet_input){
             // If the Character matches
-            if (user_input[i] == key[i])
+            if (bit == single_octet_key[i])
                 octet += "0";
             else
                 octet += "1";
