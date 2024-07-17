@@ -35,13 +35,17 @@ std::vector<std::string> reverseString(std::vector<std::string> input_string){
 
 
 std::vector<std::string> keyExpansion(std::vector<std::string> original_key, std::vector<std::string> original_input){
-    double difference = (original_input.size() - 1) - (original_key.size() - 1);
-    double mul = difference / (original_key.size() - 1);
+    int difference = (original_input.size() - 1) - (original_key.size() - 1);
 
     std::cout << difference << std::endl;
-    std::cout << mul << std::endl;
+    std::vector<std::string> expanded_key = original_key;
 
-    return original_key;
+
+    for(int i = 0; i < difference; i++){
+        expanded_key.push_back("00000000");
+    }
+
+    return expanded_key;
 }
 
 
@@ -105,8 +109,12 @@ int main(){
     std::cout << std::endl;
 
     std::cout << "#########################################################################" << std::endl;
-
+    std::cout << "Expanded key" << std::endl;
     std::vector<std::string> expanded_key = keyExpansion(binary_key, reversed_binary_string);
+        for(std::string octet : expanded_key){
+        std::cout << octet << " ";
+    }
+    std::cout << std::endl;
 
     // std::cout << "Expanded Key (Bin): " << expanded_key << std::endl;
 
