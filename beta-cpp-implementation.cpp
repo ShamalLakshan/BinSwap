@@ -3,9 +3,9 @@
 #include <iostream>
 
 
-std::string strToBinary(std::string s){
+std::vector<std::string> strToBinary(std::string s){
     int n = s.length();
-    std::string output = "";
+    std::vector<std::string> output;
 
     for (int i = 0; i <= n; i++){
         // convert each char to
@@ -21,7 +21,7 @@ std::string strToBinary(std::string s){
         }
         reverse(bin.begin(), bin.end());
 
-        output += bin + " ";
+        output.push_back(bin);
     }
     return output;
 }
@@ -74,36 +74,36 @@ int main(){
     
     std::cout << "Original String: " << myString << std::endl;
 
-    std::string binary_string = strToBinary(myString);
-    std::cout << "Binary String: " << binary_string << std::endl;
+    std::vector<std::string> binary_string = strToBinary(myString);
+    // std::cout << "Binary String: " << binary_string << std::endl;
     
-    std::string reversed_binary_string = reverseString(binary_string);
-    std::cout << "Reversed Binary String: " << reversed_binary_string << std::endl;
+    // std::string reversed_binary_string = reverseString(binary_string);
+    // std::cout << "Reversed Binary String: " << reversed_binary_string << std::endl;
 
     std::cout << "#########################################################################" << std::endl;
 
-    std::cout << "Enter a Key to Encode: ";
-    std::getline(std::cin >> std::ws,  myKey);
+    // std::cout << "Enter a Key to Encode: ";
+    // std::getline(std::cin >> std::ws,  myKey);
 
     std::cout << "#########################################################################" << std::endl;
 
     // std::string expanded_key = keyExpansion(myKey, user_input_length);
     // std::cout << "Expanded Key (Bin): " << expanded_key << std::endl;
 
-    std::string binary_key = strToBinary(myKey);
-    std::cout << "Binary key: " << binary_key << std::endl;
+    // std::string binary_key = strToBinary(myKey);
+    // std::cout << "Binary key: " << binary_key << std::endl;
 
 
-    std::string xored = simpleXor(binary_string, binary_key);
-    std::cout << "Xored String: " << xored << std::endl;
+    // std::string xored = simpleXor(binary_string, binary_key);
+    // std::cout << "Xored String: " << xored << std::endl;
 
     
-    std::string back_xored = simpleXor(binary_key, xored);
-    std::cout << "Back Xor key and out: " << back_xored << std::endl;
+    // std::string back_xored = simpleXor(binary_key, xored);
+    // std::cout << "Back Xor key and out: " << back_xored << std::endl;
 
-    std::cout << "#########################################################################" << std::endl;
+    // std::cout << "#########################################################################" << std::endl;
 
-    int multiplier = (binary_string.length() / binary_key.length());
-    std::cout << "Multiplier: " << multiplier << std::endl; 
+    // int multiplier = (binary_string.length() / binary_key.length());
+    // std::cout << "Multiplier: " << multiplier << std::endl; 
 
 }
