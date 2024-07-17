@@ -34,12 +34,14 @@ std::vector<std::string> reverseString(std::vector<std::string> input_string){
 }
 
 
-std::string keyExpansion(std::string original_key, int original_input_length){
-    //std::string binary_key = strToBinary(original_key);
+std::vector<std::string> keyExpansion(std::vector<std::string> original_key, std::vector<std::string> original_input){
+    int org_string_size = original_input.size() - 1;
+    int org_key_size = original_key.size() - 1;
 
+    std::cout << org_string_size << std::endl;
+    std::cout << org_key_size << std::endl;
 
-
-    return 0;
+    return original_key;
 }
 
 
@@ -104,7 +106,8 @@ int main(){
 
     std::cout << "#########################################################################" << std::endl;
 
-    // std::string expanded_key = keyExpansion(myKey, user_input_length);
+    std::vector<std::string> expanded_key = keyExpansion(binary_key, reversed_binary_string);
+
     // std::cout << "Expanded Key (Bin): " << expanded_key << std::endl;
 
     // std::string binary_key = strToBinary(myKey);
