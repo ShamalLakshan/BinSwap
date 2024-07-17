@@ -73,29 +73,34 @@ int main(){
     std::cout << "#########################################################################" << std::endl;
     
     std::cout << "Original String: " << myString << std::endl;
+    std::cout << "Original Binary String: " << myString << std::endl;
 
     std::vector<std::string> binary_string = strToBinary(myString);
     for(std::string octet : binary_string){
         std::cout << octet << " ";
     }
     std::cout << std::endl;
-    
-    std::cout << std::endl;
+
     std::cout << std::endl;
 
-    // std::cout << "Binary String: " << binary_string << std::endl;
-    
+    std::cout << "Reversed Binary String: " << myString << std::endl;
     std::vector<std::string> reversed_binary_string = reverseString(binary_string);
     for(std::string octet : reversed_binary_string){
         std::cout << octet << " ";
     }
     std::cout << std::endl;
-    // std::cout << "Reversed Binary String: " << reversed_binary_string << std::endl;
 
     std::cout << "#########################################################################" << std::endl;
+    std::cout << "Enter a Key to Encode: ";
+    std::getline(std::cin >> std::ws,  myKey);
+    std::cout << "Original Key: " << myKey << std::endl;
 
-    // std::cout << "Enter a Key to Encode: ";
-    // std::getline(std::cin >> std::ws,  myKey);
+    std::cout << "Binary key" << std::endl;
+    std::vector<std::string> binary_key = strToBinary(myKey);
+    for(std::string octet : binary_key){
+        std::cout << octet << " ";
+    }
+    std::cout << std::endl;
 
     std::cout << "#########################################################################" << std::endl;
 
