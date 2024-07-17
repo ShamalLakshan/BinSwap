@@ -35,17 +35,11 @@ std::vector<std::string> reverseString(std::vector<std::string> input_string){
 
 
 std::vector<std::string> keyExpansion(std::vector<std::string> original_key, std::vector<std::string> original_input){
-    double org_string_size = original_input.size() - 1;
-    double org_key_size = original_key.size() - 1;
+    double difference = (original_input.size() - 1) - (original_key.size() - 1);
+    double mul = difference / (original_key.size() - 1);
 
-    double difference = org_string_size - org_key_size;
-    double mul = difference / org_key_size;
-
-    std::cout << org_string_size << std::endl;
-    std::cout << org_key_size << std::endl;
     std::cout << difference << std::endl;
     std::cout << mul << std::endl;
-
 
     return original_key;
 }
