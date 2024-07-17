@@ -58,7 +58,6 @@ std::vector<std::string> simpleXor(std::vector <std::string> user_input, std::ve
         std::string single_octet_input = user_input[i];
         std::string single_octet_key = key[i];
         for(char bit : single_octet_input){
-            // If the Character matches
             if (bit == single_octet_key[i])
                 octet += "0";
             else
@@ -129,7 +128,15 @@ int main(){
     }
     std::cout << std::endl;
 
-    
+    std::cout << "#########################################################################" << std::endl;
+    std::cout << "verifying XOR" << std::endl;
+
+    std::vector<std::string> reverse_xored = simpleXor(xored, expanded_key);
+    for(std::string octet : reverse_xored){
+        std::cout << octet << " ";
+    }
+    std::cout << std::endl;
+
     // std::string back_xored = simpleXor(binary_key, xored);
     // std::cout << "Back Xor key and out: " << back_xored << std::endl;
 
