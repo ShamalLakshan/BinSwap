@@ -27,7 +27,7 @@ std::vector<std::string> strToBinary(std::string s){
 }
 
 
-std::string reverseString(std::string input_string){
+std::vector<std::string> reverseString(std::vector<std::string> input_string){
     reverse(input_string.begin(), input_string.end());
 
     return input_string;
@@ -35,11 +35,11 @@ std::string reverseString(std::string input_string){
 
 
 std::string keyExpansion(std::string original_key, int original_input_length){
-    std::string binary_key = strToBinary(original_key);
+    //std::string binary_key = strToBinary(original_key);
 
 
 
-    return binary_key;
+    return 0;
 }
 
 
@@ -75,9 +75,14 @@ int main(){
     std::cout << "Original String: " << myString << std::endl;
 
     std::vector<std::string> binary_string = strToBinary(myString);
+    for(std::string octet : binary_string){
+        std::cout << octet << " ";
+    }
+    std::cout << std::endl;
+
     // std::cout << "Binary String: " << binary_string << std::endl;
     
-    // std::string reversed_binary_string = reverseString(binary_string);
+    std::vector<std::string> reversed_binary_string = reverseString(binary_string);
     // std::cout << "Reversed Binary String: " << reversed_binary_string << std::endl;
 
     std::cout << "#########################################################################" << std::endl;
