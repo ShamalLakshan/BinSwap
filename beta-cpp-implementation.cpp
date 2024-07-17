@@ -60,7 +60,22 @@ std::vector<std::string> simpleXor(std::string user_input, std::string key){
         for(std::string bit : user_input[i]){
             // If the Character matches
             if (user_input[i] == key[i])
-
+                octet += "0";
+            else
+                octet += "1";
+        }
+        xored_string.push_back(octet);
+    }
+    // for (int j = 0; j < n; j++)
+    // {
+    //     // If the Character matches
+    //     if (user_input[i] == key[i])
+    //         ans += "0";
+    //     else
+    //         ans += "1";
+    // }
+    return xored_string;
+}
 
 
 int main(){
@@ -117,8 +132,7 @@ int main(){
     std::cout << :"XORing" << std::endl;
 
     std::vector<std::string> xored = simpleXor(reversed_binary_string, expanded_key);
-    std::vector<std::string> expanded_key = keyExpansion(binary_key, reversed_binary_string);
-        for(std::string octet : expanded_key){
+    for(std::string octet : xored){
         std::cout << octet << " ";
     }
     std::cout << std::endl;
