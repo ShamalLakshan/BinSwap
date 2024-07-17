@@ -79,10 +79,17 @@ int main(){
         std::cout << octet << " ";
     }
     std::cout << std::endl;
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
 
     // std::cout << "Binary String: " << binary_string << std::endl;
     
     std::vector<std::string> reversed_binary_string = reverseString(binary_string);
+    for(std::string octet : reversed_binary_string){
+        std::cout << octet << " ";
+    }
+    std::cout << std::endl;
     // std::cout << "Reversed Binary String: " << reversed_binary_string << std::endl;
 
     std::cout << "#########################################################################" << std::endl;
