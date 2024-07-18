@@ -69,6 +69,14 @@ std::vector<std::string> simpleXor(std::vector <std::string> user_input, std::ve
 }
 
 
+std::string binaryToString(const std::vector<std::string>& binary) {
+    std::string result;
+    for (const auto& octet : binary) {
+        result += static_cast<char>(std::bitset<8>(octet).to_ulong());
+    }
+    return result;
+}
+
 
 void printBinary(const std::vector<std::string>& binary) {
     for (const auto& octet : binary) {
