@@ -68,6 +68,16 @@ std::vector<std::string> simpleXor(std::vector <std::string> user_input, std::ve
     return xored_string;
 }
 
+
+
+void printBinary(const std::vector<std::string>& binary) {
+    for (const auto& octet : binary) {
+        std::cout << octet << " ";
+    }
+    std::cout << std::endl;
+}
+
+
 std::string encodeString(const std::string& input, const std::string& key) {
     std::vector<std::string> binary_string = strToBinary(input);
     std::cout << "Original binary: ";
