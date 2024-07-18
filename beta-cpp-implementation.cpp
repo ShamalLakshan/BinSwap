@@ -113,7 +113,7 @@ int main(){
     std::cout << "#########################################################################" << std::endl;
     std::cout << "Expanded key" << std::endl;
     std::vector<std::string> expanded_key = keyExpansion(binary_key, reversed_binary_string);
-        for(std::string octet : expanded_key){
+    for(std::string octet : expanded_key){
         std::cout << octet << " ";
     }
     std::cout << std::endl;
