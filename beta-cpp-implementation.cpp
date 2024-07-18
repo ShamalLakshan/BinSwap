@@ -87,6 +87,10 @@ std::string encodeString(const std::string& input, const std::string& key) {
     std::cout << "Reversed binary: ";
     printBinary(reversed_binary_string);
 
+    std::vector<std::string> binary_key = strToBinary(key);
+    std::cout << "Key binary: ";
+    printBinary(binary_key);
+
 }
 
 
