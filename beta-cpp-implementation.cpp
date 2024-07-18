@@ -91,6 +91,16 @@ std::string encodeString(const std::string& input, const std::string& key) {
     std::cout << "Key binary: ";
     printBinary(binary_key);
 
+        std::vector<std::string> expanded_key = keyExpansion(binary_key, reversed_binary_string.size());
+    std::cout << "Expanded key: ";
+    printBinary(expanded_key);
+
+    std::vector<std::string> xored = simpleXor(reversed_binary_string, expanded_key);
+    std::cout << "XORed result: ";
+    printBinary(xored);
+
+    return binaryToString(xored);
+
 }
 
 
