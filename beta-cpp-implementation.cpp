@@ -78,38 +78,39 @@ std::string binaryToString(const std::vector<std::string>& binary) {
 }
 
 
-void printBinary(const std::vector<std::string>& binary) {
-    for (const auto& octet : binary) {
-        std::cout << octet << " ";
-    }
-    std::cout << std::endl;
-}
+// Better 
+// void printBinary(const std::vector<std::string>& binary) {
+//     for (const auto& octet : binary) {
+//         std::cout << octet << " ";
+//     }
+//     std::cout << std::endl;
+// }
 
 
-std::string encodeString(const std::string& input, const std::string& key) {
-    std::vector<std::string> binary_string = strToBinary(input);
-    std::cout << "Original binary: ";
-    printBinary(binary_string);
+// std::string encodeString(const std::string& input, const std::string& key) {
+//     std::vector<std::string> binary_string = strToBinary(input);
+//     std::cout << "Original binary: ";
+//     printBinary(binary_string);
 
-    std::vector<std::string> reversed_binary_string = reverseString(binary_string);
-    std::cout << "Reversed binary: ";
-    printBinary(reversed_binary_string);
+//     std::vector<std::string> reversed_binary_string = reverseString(binary_string);
+//     std::cout << "Reversed binary: ";
+//     printBinary(reversed_binary_string);
 
-    std::vector<std::string> binary_key = strToBinary(key);
-    std::cout << "Key binary: ";
-    printBinary(binary_key);
+//     std::vector<std::string> binary_key = strToBinary(key);
+//     std::cout << "Key binary: ";
+//     printBinary(binary_key);
 
-        std::vector<std::string> expanded_key = keyExpansion(binary_key, reversed_binary_string.size());
-    std::cout << "Expanded key: ";
-    printBinary(expanded_key);
+//         std::vector<std::string> expanded_key = keyExpansion(binary_key, reversed_binary_string.size());
+//     std::cout << "Expanded key: ";
+//     printBinary(expanded_key);
 
-    std::vector<std::string> xored = simpleXor(reversed_binary_string, expanded_key);
-    std::cout << "XORed result: ";
-    printBinary(xored);
+//     std::vector<std::string> xored = simpleXor(reversed_binary_string, expanded_key);
+//     std::cout << "XORed result: ";
+//     printBinary(xored);
 
-    return binaryToString(xored);
+//     return binaryToString(xored);
 
-}
+// }
 
 
 int main(){
@@ -174,11 +175,12 @@ int main(){
     std::cout << "#########################################################################" << std::endl;
     std::cout << "verifying XOR" << std::endl;
 
-    std::vector<std::string> reverse_xored = simpleXor(xored, expanded_key);
+    std::vector<std::string> reverse_xored = simpleXor(xored, expanded_key); // returns a reverse version of the binary string hopefully.
     for(std::string octet : reverse_xored){
         std::cout << octet << " ";
     }
     std::cout << std::endl;
+
 
     // std::string back_xored = simpleXor(binary_key, xored);
     // std::cout << "Back Xor key and out: " << back_xored << std::endl;
